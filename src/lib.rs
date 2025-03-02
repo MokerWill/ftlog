@@ -665,7 +665,7 @@ impl Log for Logger {
         let limit_key = if limit == 0 {
             0
         } else {
-            let mut b = hashbrown::hash_map::DefaultHashBuilder::default().build_hasher();
+            let mut b = hashbrown::DefaultHashBuilder::default().build_hasher();
             if let Some(p) = record.module_path() {
                 p.as_bytes().hash(&mut b);
             } else {
